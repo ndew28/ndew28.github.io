@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini Interview — Nathan Duong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#f8f6f3; --surface:#fff; --text:#181818; --muted:#666; --accent:#1d4ed8; --border:#e4e0db; --tag-bg:#eef2ff; --tag-text:#1d4ed8; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    nav { position:fixed; top:0; left:0; right:0; z-index:200; background:rgba(248,246,243,0.92); backdrop-filter:blur(14px); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:0 6%; height:62px; }
+    .nav-logo { font-family:'DM Serif Display',serif; font-size:1.2rem; color:var(--text); text-decoration:none; letter-spacing:-0.02em; }
+    .nav-links { display:flex; gap:1.8rem; list-style:none; }
+    .nav-links a { font-size:0.85rem; font-weight:500; color:var(--muted); text-decoration:none; transition:color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--accent); }
+    .nav-cta { background:var(--accent); color:#fff !important; padding:0.35rem 0.9rem; border-radius:6px; }
+
+    .page-wrap { max-width:860px; margin:0 auto; padding:100px 6% 80px; }
+    .page-label { font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:0.5rem; }
+    h1.page-title { font-family:'DM Serif Display',serif; font-size:clamp(2rem,4vw,3rem); letter-spacing:-0.03em; margin-bottom:0.5rem; }
+    .intro-para { font-size:0.97rem; color:var(--muted); line-height:1.8; max-width:680px; margin-bottom:2.5rem; padding-bottom:2.5rem; border-bottom:1px solid var(--border); }
+    .back-link { display:inline-flex; align-items:center; gap:0.4rem; font-size:0.85rem; font-weight:500; color:var(--muted); text-decoration:none; margin-bottom:1.5rem; transition:color 0.2s; }
+    .back-link:hover { color:var(--accent); }
+
+    .video-card { background:var(--surface); border:1px solid var(--border); border-radius:16px; overflow:hidden; }
+    .video-wrapper { position:relative; padding-bottom:56.25%; height:0; }
+    .video-wrapper iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+
+    .video-meta { padding:1.8rem 2rem; }
+    .video-meta-title { font-family:'DM Serif Display',serif; font-size:1.3rem; letter-spacing:-0.02em; margin-bottom:0.4rem; }
+    .video-meta-sub { font-size:0.85rem; color:var(--muted); margin-bottom:1.2rem; }
+    .video-tags { display:flex; flex-wrap:wrap; gap:0.45rem; }
+    .tag { background:var(--tag-bg); color:var(--tag-text); font-size:0.8rem; font-weight:500; padding:0.25rem 0.65rem; border-radius:6px; }
+
+    .reflection-card { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:2.2rem 2.5rem; margin-top:1.4rem; position:relative; overflow:hidden; }
+    .reflection-card::before { content:'"'; font-family:'DM Serif Display',serif; font-size:8rem; color:#eff4ff; position:absolute; top:-1.2rem; left:1rem; line-height:1; pointer-events:none; }
+    .reflection-label { font-size:0.7rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:0.6rem; position:relative; z-index:1; }
+    .reflection-card p { font-size:0.95rem; color:var(--muted); line-height:1.85; margin-bottom:1rem; position:relative; z-index:1; }
+    .reflection-card p:last-child { margin-bottom:0; }
+
+    footer { text-align:center; padding:2rem 5%; border-top:1px solid var(--border); font-size:0.8rem; color:var(--muted); margin-top:4rem; }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">Nathan Duong</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="resume.html">Résumé</a></li>
+    <li><a href="cover-letter.html">Cover Letter</a></li>
+    <li><a href="instructions.html">Instructions</a></li>
+    <li><a href="proposal.html">Proposal</a></li>
+    <li><a href="mini-interview.html" class="active">Interview</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <a class="back-link" href="index.html">← Back to Home</a>
+  <p class="page-label">Course Assignment</p>
+  <h1 class="page-title">Mini Interview</h1>
+  <p class="intro-para">This mini interview was completed as part of a professional communication course assignment. The goal was to practice articulating personal background, skills, and career goals in a confident, concise, and professional manner — simulating the experience of a real job or internship interview setting.</p>
+
+  <div class="video-card">
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/3OR4xvcrmB4"
+        title="Nathan Duong — Mini Interview"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="video-meta">
+      <div class="video-meta-title">Mini Interview — Nathan Duong</div>
+      <div class="video-meta-sub">Professional Communication Assignment · University of Central Florida</div>
+      <div class="video-tags">
+        <span class="tag">Interview Skills</span>
+        <span class="tag">Communication</span>
+        <span class="tag">Professional Development</span>
+        <span class="tag">UCF</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="reflection-card">
+    <div class="reflection-label">Reflection</div>
+    <p>Recording this mini interview was a valuable exercise in self-presentation and professional communication. Putting my experiences, skills, and goals into spoken words — rather than written form — pushed me to think about how I naturally talk about myself and where I still need to grow in confidence. I found it challenging to be concise while still sounding genuine and complete, especially when discussing technical projects like Hyve in a way that's accessible to a non-technical audience.</p>
+    <p>Through this assignment, I gained a better appreciation for how much preparation goes into a real interview. Knowing what to say is only part of it — delivery, pacing, and eye contact matter just as much. Going forward, I plan to continue practicing by recording myself, seeking feedback from peers, and attending SASE mock interview workshops to sharpen these skills before applying for internships.</p>
+  </div>
+</div>
+
+<footer>© 2025 Nathan Duong · <a href="index.html" style="color:var(--accent);text-decoration:none;">Back to Portfolio</a></footer>
+</body>
+</html>
