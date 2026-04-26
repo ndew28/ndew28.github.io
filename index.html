@@ -428,6 +428,38 @@
     }
     .project-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
+    /* ── REFLECTION ── */
+    #reflection { border-top: 1px solid var(--border); }
+    .reflection-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem 2.8rem;
+      max-width: 780px;
+      position: relative;
+      overflow: hidden;
+    }
+    .reflection-card::before {
+      content: '"';
+      font-family: 'DM Serif Display', serif;
+      font-size: 10rem;
+      color: var(--accent-light);
+      position: absolute;
+      top: -1.5rem;
+      left: 1.5rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .reflection-card p {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+    .reflection-card p:last-child { margin-bottom: 0; }
+
     /* ── CONTACT ── */
     #contact { border-top: 1px solid var(--border); }
     .contact-card {
@@ -484,6 +516,7 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#reflection">Reflection</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -683,6 +716,16 @@
           <span class="tag">QR Code</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- REFLECTION -->
+  <section id="reflection">
+    <p class="section-label">Reflection</p>
+    <h2>My Portfolio Journey</h2>
+    <div class="reflection-card fade-in">
+      <p>Building this digital portfolio has been a rewarding and eye opening experience. Overall, I'm happy with how it has come together the clean, minimal layout feels true to my personality as someone who values clarity and function over flashiness. The blue accent color gives it a professional tech feel without being overpowering, and the section by section navigation makes it easy to find information quickly. The fonts are legible and well spaced, which was a priority for me since readability directly affects how a visitor experiences the site. One thing I'm still refining is the balance between content and white space I want the page to feel complete without feeling cluttered, especially as I continue to add more projects and work experience over time.</p>
+      <p>Through this process, I've learned how much thought goes into presenting yourself professionally online. Writing the "About Me" section was surprisingly challenging distilling my education, experiences, and skills into a few clear paragraphs pushed me to think critically about what makes me stand out as a candidate. I also learned a lot about structuring HTML and CSS from scratch, particularly around responsive layouts and scroll animations. Some questions I still have include how to best optimize the site for mobile devices and whether I should add a downloadable résumé link. Going forward, I plan to use resources like MDN Web Docs for CSS guidance, YouTube tutorials for design inspiration, and peer feedback to continue improving the site as I grow in my career.</p>
     </div>
   </section>
 
