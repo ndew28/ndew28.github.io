@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research Proposal — Nathan Duong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#f8f6f3; --surface:#fff; --text:#181818; --muted:#666; --accent:#1d4ed8; --border:#e4e0db; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    nav { position:fixed; top:0; left:0; right:0; z-index:200; background:rgba(248,246,243,0.92); backdrop-filter:blur(14px); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:0 6%; height:62px; }
+    .nav-logo { font-family:'DM Serif Display',serif; font-size:1.2rem; color:var(--text); text-decoration:none; }
+    .nav-links { display:flex; gap:1.8rem; list-style:none; }
+    .nav-links a { font-size:0.85rem; font-weight:500; color:var(--muted); text-decoration:none; transition:color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--accent); }
+    .nav-cta { background:var(--accent); color:#fff !important; padding:0.35rem 0.9rem; border-radius:6px; }
+
+    .page-wrap { max-width:860px; margin:0 auto; padding:100px 6% 80px; }
+    .page-label { font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:0.5rem; }
+    h1.page-title { font-family:'DM Serif Display',serif; font-size:clamp(2rem,4vw,3rem); letter-spacing:-0.03em; margin-bottom:0.5rem; }
+    .intro-para { font-size:0.97rem; color:var(--muted); line-height:1.8; max-width:680px; margin-bottom:2.5rem; padding-bottom:2.5rem; border-bottom:1px solid var(--border); }
+    .back-link { display:inline-flex; align-items:center; gap:0.4rem; font-size:0.85rem; font-weight:500; color:var(--muted); text-decoration:none; margin-bottom:1.5rem; transition:color 0.2s; }
+    .back-link:hover { color:var(--accent); }
+
+    .content-card { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:2.8rem 3rem; }
+    .doc-title { font-family:'DM Serif Display',serif; font-size:1.6rem; letter-spacing:-0.02em; margin-bottom:0.3rem; }
+    .doc-subtitle { font-size:0.9rem; color:var(--muted); margin-bottom:1.5rem; font-style:italic; }
+    .doc-divider { border:none; border-top:2px solid var(--text); margin:0 0 2rem; }
+
+    .doc-section { margin-bottom:2rem; }
+    .doc-section h2 { font-size:0.95rem; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.8rem; padding-bottom:0.3rem; border-bottom:1px solid var(--border); }
+    .doc-section p { font-size:0.93rem; color:var(--muted); line-height:1.85; margin-bottom:0.85rem; }
+    .doc-section p:last-child { margin-bottom:0; }
+
+    .timeline-grid { display:grid; grid-template-columns:80px 1fr; gap:0.5rem 1rem; font-size:0.9rem; }
+    .tl-month { font-weight:600; color:var(--text); padding-top:0.1rem; }
+    .tl-task { color:var(--muted); padding-bottom:0.6rem; border-bottom:1px solid var(--border); }
+    .tl-task:last-child { border-bottom:none; }
+
+    .budget-table { width:100%; border-collapse:collapse; font-size:0.9rem; margin-top:0.5rem; }
+    .budget-table th { background:var(--accent); color:#fff; padding:0.55rem 1rem; text-align:left; font-weight:600; }
+    .budget-table td { padding:0.5rem 1rem; border-bottom:1px solid var(--border); color:var(--muted); }
+    .budget-table tr:last-child td { border-bottom:none; font-weight:700; color:var(--text); }
+
+    .ref-list { list-style:none; display:flex; flex-direction:column; gap:0.75rem; }
+    .ref-list li { font-size:0.85rem; color:var(--muted); line-height:1.7; padding-left:1.5rem; text-indent:-1.5rem; }
+    .ref-list a { color:var(--accent); word-break:break-all; }
+
+    footer { text-align:center; padding:2rem 5%; border-top:1px solid var(--border); font-size:0.8rem; color:var(--muted); margin-top:4rem; }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">Nathan Duong</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="resume.html">Résumé</a></li>
+    <li><a href="cover-letter.html">Cover Letter</a></li>
+    <li><a href="instructions.html">Instructions</a></li>
+    <li><a href="proposal.html" class="active">Proposal</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <a class="back-link" href="index.html">← Back to Home</a>
+  <p class="page-label">Course Assignment</p>
+  <h1 class="page-title">Research Proposal</h1>
+  <p class="intro-para">This research proposal was developed as a formal academic writing assignment, structured to meet the requirements of an undergraduate research application. The proposal identifies a research problem, surveys existing literature, outlines a mixed-methods methodology, and projects expected outcomes — all in service of studying how social media use affects college students' academic performance, focus, and overall well-being.</p>
+
+  <div class="content-card">
+    <div class="doc-title">Scrolling vs. Studying</div>
+    <div class="doc-subtitle">The Impact of Social Media Usage on Academic Performance, Focus, and Well-Being Among College Students</div>
+    <hr class="doc-divider">
+
+    <div class="doc-section">
+      <h2>Project Objective</h2>
+      <p>This research examines the relationship between social media use and academic performance, concentration, and well-being among college students. The primary question this study seeks to answer is: <em>What is the effect of time spent on social media on academic success and studying?</em> Additional areas of focus include whether high levels of distraction from social media lead to less time spent studying or increased stress levels.</p>
+      <p>This study will analyze various patterns — the amount of time spent on different platforms, how frequently students multitask while studying, and how much students use smartphones during academic work. The results will help determine if social media primarily serves as a barrier to academic success, or if some forms of social media can be used effectively without negatively impacting performance.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>Background & Significance</h2>
+      <p>College students use their smartphones and social media now more than ever. These technologies provide opportunities to communicate, create, entertain, and access a variety of resources; however, they also create many distractions that can hinder academic performance. Studies have found that increased media and technology use tends to correlate with poorer school performance and difficulties in maintaining focus (Rosen et al.). This suggests that the way students engage with these technologies may influence their level of academic success.</p>
+      <p>In addition to potential negative consequences on academic success, attention economics — the way social media is designed to keep individuals engaged as long as possible through notifications, unlimited scrolling, and personalized feeds — can disrupt studying. Furthermore, cognitive load theory demonstrates that switching attention from studying to checking social media can impair a student's ability to retain information and maintain focus.</p>
+      <p>Prior research strongly supports these concerns. Lepp et al. found that increased smartphone use leads to decreased GPAs and higher anxiety. Al-Menayes identified a negative correlation between mobile social media use and academic achievement. Kolhar et al. showed that smartphone addiction leads to increased stress and decreased life satisfaction. Hawi and Samaha reported inverse relationships between social media addiction and both self-esteem and academic success.</p>
+      <p>Understanding how social media impacts focus and performance will help students develop better habits. The findings will also contribute to communication studies regarding how contemporary technology shapes behavior, attention, and productivity.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>Research Methods</h2>
+      <p>This study will employ a mixed-methods strategy combining quantitative and qualitative research to identify how social media impacts academic achievement.</p>
+      <p><strong>Phase 1 — Survey:</strong> 100–150 undergraduate students at the University of Central Florida will be surveyed regarding average daily social media hours, phone-checking frequency while studying, platform preferences, GPA, self-assessed concentration levels, and perceived stress. Surveys will include multiple-choice and Likert-scale questions designed to identify connections and trends between social media use and academic performance.</p>
+      <p><strong>Phase 2 — Interviews:</strong> 10–15 participants will be interviewed to gain deeper insight into how social media influences focus, time management, and motivation through personal accounts. This qualitative component captures behaviors that surveys cannot assess adequately.</p>
+      <p>Data will be analyzed to compare social media usage patterns with GPA and self-reported distraction experiences. Common themes — such as procrastination, multitasking, and social media reliance — will be identified through a review of interview responses.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>Timeline</h2>
+      <div class="timeline-grid">
+        <span class="tl-month">May</span><span class="tl-task">Develop survey instruments and apply for IRB approval</span>
+        <span class="tl-month">June</span><span class="tl-task">Distribute survey and collect responses</span>
+        <span class="tl-month">July</span><span class="tl-task">Conduct interviews and begin data analysis</span>
+        <span class="tl-month">August</span><span class="tl-task">Complete analysis and write final report</span>
+      </div>
+    </div>
+
+    <div class="doc-section">
+      <h2>Expected Outcomes</h2>
+      <p>This research will produce a paper examining the impact of social media consumption on academic performance, concentration, and well-being among college students, alongside a poster for presentation at the UCF Undergraduate Research Conference.</p>
+      <p>I anticipate that the results will indicate that spending more time on social media correlates with decreased focus and may negatively affect academic performance. Through the interview phase, I hope to identify patterns such as habitual phone checking and social media dependency. Ultimately, this research will assist the UCF community by identifying practical strategies — such as reducing multitasking, checking phones less frequently, and establishing regular study routines — to help students improve academically.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>Budget</h2>
+      <table class="budget-table">
+        <thead><tr><th>Item</th><th>Cost</th></tr></thead>
+        <tbody>
+          <tr><td>Participant incentives (survey)</td><td>$500</td></tr>
+          <tr><td>Interview incentives</td><td>$150</td></tr>
+          <tr><td>Survey tools / software</td><td>$100</td></tr>
+          <tr><td>Poster printing</td><td>$100</td></tr>
+          <tr><td><strong>Total</strong></td><td><strong>$900</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="doc-section">
+      <h2>Preliminary Work & Experience</h2>
+      <p>I have assembled a strong foundation of background research by examining numerous peer-reviewed articles discussing the role of social media in student academic performance. These sources reveal consistent themes: excessive mobile phone use correlates with decreased GPAs, and distraction and multitasking negatively affect academic success.</p>
+      <p>Relevant coursework in analyzing academic literature, developing research questions, and composing structured essays has prepared me for this project. I also have prior experience designing surveys and collecting data, which will allow me to gather reliable information with confidence. My personal experiences with social media's impact on studying continue to motivate this research.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>IRB Statement</h2>
+      <p>This project requires IRB approval because it involves human subjects through surveys and interviews. All data will be collected and handled in compliance with UCF's Institutional Review Board protocols to ensure participant privacy, voluntary participation, and ethical research standards.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>References</h2>
+      <ul class="ref-list">
+        <li>Lau, W. W. F. (2017). Effects of social media usage and social media multitasking on the academic performance of university students. <em>Computers in Human Behavior, 68</em>, 286–291. <a href="https://doi.org/10.1016/j.chb.2016.11.043" target="_blank">https://doi.org/10.1016/j.chb.2016.11.043</a></li>
+        <li>Samaha, M., & Hawi, N. S. (2016). Relationships among smartphone addiction, stress, academic performance, and satisfaction with life. <em>Computers in Human Behavior, 57</em>, 321–325. <a href="https://doi.org/10.1016/j.chb.2015.12.045" target="_blank">https://doi.org/10.1016/j.chb.2015.12.045</a></li>
+        <li>Doleck, T., Bazelais, P., & Lemay, D. J. (2018). Social networking and academic performance: A generalized structured component approach. <em>Journal of Educational Computing Research, 56</em>(8), 1329–1349. <a href="https://doi.org/10.1177/0735633117738281" target="_blank">https://doi.org/10.1177/0735633117738281</a></li>
+        <li>Azizi, S. M., Soroush, A., & Khatony, A. (2019). The relationship between social networking addiction and academic performance in Iranian students of medical sciences. <em>BMC Psychology, 7</em>(1). <a href="https://doi.org/10.1186/s40359-019-0305-0" target="_blank">https://doi.org/10.1186/s40359-019-0305-0</a></li>
+        <li>Amez, S., & Baert, S. (2020). Smartphone use and academic performance: A literature review. <em>International Journal of Educational Research, 103</em>, 101618. <a href="https://doi.org/10.1016/j.ijer.2020.101618" target="_blank">https://doi.org/10.1016/j.ijer.2020.101618</a></li>
+        <li>Tafesse, W. (2020). The effect of social networking site use on college students' academic performance: The mediating role of student engagement. <em>Education and Information Technologies, 25</em>(6), 4747–4763. <a href="https://doi.org/10.1007/s10639-020-10162-y" target="_blank">https://doi.org/10.1007/s10639-020-10162-y</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer>© 2025 Nathan Duong · <a href="index.html" style="color:var(--accent);text-decoration:none;">Back to Portfolio</a></footer>
+</body>
+</html>

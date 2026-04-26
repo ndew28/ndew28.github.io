@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Résumé — Nathan Duong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#f8f6f3; --surface:#fff; --text:#181818; --muted:#666; --accent:#1d4ed8; --accent-light:#eff4ff; --border:#e4e0db; --tag-bg:#eef2ff; --tag-text:#1d4ed8; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    nav { position:fixed; top:0; left:0; right:0; z-index:200; background:rgba(248,246,243,0.92); backdrop-filter:blur(14px); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:0 6%; height:62px; }
+    .nav-logo { font-family:'DM Serif Display',serif; font-size:1.2rem; color:var(--text); text-decoration:none; letter-spacing:-0.02em; }
+    .nav-links { display:flex; gap:1.8rem; list-style:none; }
+    .nav-links a { font-size:0.85rem; font-weight:500; color:var(--muted); text-decoration:none; transition:color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--accent); }
+    .nav-cta { background:var(--accent); color:#fff !important; padding:0.35rem 0.9rem; border-radius:6px; }
+
+    .page-wrap { max-width:900px; margin:0 auto; padding:100px 6% 80px; }
+    .page-label { font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:0.5rem; }
+    h1.page-title { font-family:'DM Serif Display',serif; font-size:clamp(2rem,4vw,3rem); letter-spacing:-0.03em; margin-bottom:0.5rem; }
+    .intro-para { font-size:0.97rem; color:var(--muted); line-height:1.8; max-width:680px; margin-bottom:2.5rem; padding-bottom:2.5rem; border-bottom:1px solid var(--border); }
+
+    .resume-card { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:2.5rem 3rem; }
+
+    /* Resume header */
+    .res-name { font-family:'DM Serif Display',serif; font-size:2.2rem; letter-spacing:-0.03em; margin-bottom:0.4rem; }
+    .res-contact { font-size:0.85rem; color:var(--muted); margin-bottom:1.5rem; }
+    .res-contact a { color:var(--accent); text-decoration:none; }
+    .res-divider { border:none; border-top:2px solid var(--text); margin:0.5rem 0 1.5rem; }
+    .res-section { margin-bottom:1.8rem; }
+    .res-section-title { font-size:0.75rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text); margin-bottom:0.8rem; border-bottom:1px solid var(--border); padding-bottom:0.3rem; }
+    .res-entry { margin-bottom:1.1rem; }
+    .res-entry:last-child { margin-bottom:0; }
+    .res-entry-head { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:0.3rem; }
+    .res-entry-title { font-weight:600; font-size:0.95rem; }
+    .res-entry-org { font-size:0.88rem; color:var(--muted); }
+    .res-entry-date { font-size:0.82rem; color:var(--muted); white-space:nowrap; }
+    .res-bullets { list-style:none; margin-top:0.4rem; display:flex; flex-direction:column; gap:0.3rem; }
+    .res-bullets li { display:flex; gap:0.5rem; font-size:0.87rem; color:var(--muted); line-height:1.6; }
+    .res-bullets li::before { content:'•'; color:var(--text); flex-shrink:0; }
+    .res-skills-row { font-size:0.88rem; color:var(--muted); line-height:1.7; }
+    .res-skills-row strong { color:var(--text); }
+
+    .back-link { display:inline-flex; align-items:center; gap:0.4rem; font-size:0.85rem; font-weight:500; color:var(--muted); text-decoration:none; margin-bottom:1.5rem; transition:color 0.2s; }
+    .back-link:hover { color:var(--accent); }
+
+    footer { text-align:center; padding:2rem 5%; border-top:1px solid var(--border); font-size:0.8rem; color:var(--muted); margin-top:4rem; }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">Nathan Duong</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="resume.html" class="active">Résumé</a></li>
+    <li><a href="cover-letter.html">Cover Letter</a></li>
+    <li><a href="instructions.html">Instructions</a></li>
+    <li><a href="proposal.html">Proposal</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <a class="back-link" href="index.html">← Back to Home</a>
+  <p class="page-label">Course Assignment</p>
+  <h1 class="page-title">Résumé</h1>
+  <p class="intro-para">This résumé was developed as part of a professional writing course assignment focused on creating a polished, job-ready document. It compiles my academic background, technical experience, and transferable skills into a format tailored for software engineering and computer science internship roles.</p>
+
+  <div class="resume-card">
+    <div class="res-name">Nathan Duong</div>
+    <div class="res-contact">
+      (407) 775-0721 &nbsp;|&nbsp;
+      <a href="mailto:nathanduong101@gmail.com">nathanduong101@gmail.com</a> &nbsp;|&nbsp;
+      <a href="https://www.linkedin.com/in/nduong-/" target="_blank">linkedin.com/in/nduong-</a>
+    </div>
+    <hr class="res-divider">
+
+    <div class="res-section">
+      <div class="res-section-title">Education</div>
+      <div class="res-entry">
+        <div class="res-entry-head">
+          <div>
+            <div class="res-entry-title">University of Central Florida — Orlando, FL</div>
+            <div class="res-entry-org">Bachelor of Science in Computer Science &nbsp;·&nbsp; GPA: 3.8</div>
+            <div class="res-entry-org" style="margin-top:0.2rem;">Coursework: Computer Science I, Computer Organization and Logic, Object-Oriented Programming</div>
+          </div>
+          <span class="res-entry-date">Expected: May 2028</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="res-section">
+      <div class="res-section-title">Experience</div>
+      <div class="res-entry">
+        <div class="res-entry-head">
+          <div>
+            <div class="res-entry-title">STEM Connect Hackathon — "Hyve" Networking Platform</div>
+            <div class="res-entry-org">Participant · Orlando, FL</div>
+          </div>
+          <span class="res-entry-date">September 2025</span>
+        </div>
+        <ul class="res-bullets">
+          <li>Built a full-stack networking web app using React, Tailwind, and Supabase, enabling students and professionals to connect through shared events and communities.</li>
+          <li>Implemented secure user authentication and QR code check-ins via custom API integrations to streamline event attendance.</li>
+          <li>Delivered a functional prototype in 36 hours as part of an agile team of 4, strengthening skills in rapid prototyping, product thinking, and balancing speed with maintainable code.</li>
+        </ul>
+      </div>
+      <div class="res-entry">
+        <div class="res-entry-head">
+          <div>
+            <div class="res-entry-title">Audio Visual Set Up</div>
+            <div class="res-entry-org">Set Up Crew · Florida</div>
+          </div>
+          <span class="res-entry-date">March 2024 – Present</span>
+        </div>
+        <ul class="res-bullets">
+          <li>Responsible for the installation, operation, and breakdown of audio and visual equipment for live events, conferences, and presentations with 50–100 attendees.</li>
+          <li>Ensure proper cabling, sound checks, and video display alignment.</li>
+          <li>Coordinate with event coordinators and technical teams to deliver seamless AV experiences while maintaining equipment and troubleshooting issues on-site.</li>
+        </ul>
+      </div>
+      <div class="res-entry">
+        <div class="res-entry-head">
+          <div>
+            <div class="res-entry-title">Encore Nails and Spa — Windermere, FL</div>
+            <div class="res-entry-org">Receptionist</div>
+          </div>
+          <span class="res-entry-date">March 2019 – June 2023</span>
+        </div>
+        <ul class="res-bullets">
+          <li>Enthusiastically welcomed and managed 70–80 guests per shift, coordinated check-in times, assisted in collecting insurance, and directed guests to their destinations.</li>
+          <li>Managed over two phone lines and facilitated 50+ calls a day with clients and staff; arranged client appointments using multiple scheduling interfaces.</li>
+          <li>Monitored security and financial transactions while providing excellent communication and customer service with a warm, professional attitude.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="res-section">
+      <div class="res-section-title">Leadership & Involvement</div>
+      <div class="res-entry">
+        <div class="res-entry-head">
+          <div>
+            <div class="res-entry-title">SASE (Society of Asian Scientists and Engineers) — UCF, FL</div>
+            <div class="res-entry-org">Member</div>
+          </div>
+          <span class="res-entry-date">January 2025 – Present</span>
+        </div>
+        <ul class="res-bullets">
+          <li>Engaged in professional development workshops focused on technical interviews, leadership, and industry networking with top STEM companies.</li>
+          <li>Collaborated with 50+ peers and professionals to foster an inclusive community promoting leadership and career advancement in STEM.</li>
+          <li>Attended national/regional SASE conferences and company networking sessions, building connections with Fortune 500 recruiters and engineers.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="res-section">
+      <div class="res-section-title">Skills & Certifications</div>
+      <div class="res-skills-row"><strong>Applications:</strong> Microsoft Office Specialist (MOS Certified), Java, Python, C</div>
+      <div class="res-skills-row" style="margin-top:0.4rem;"><strong>Languages:</strong> English (Advanced), Vietnamese (Conversational)</div>
+    </div>
+  </div>
+</div>
+
+<footer>© 2025 Nathan Duong · <a href="index.html" style="color:var(--accent);text-decoration:none;">Back to Portfolio</a></footer>
+</body>
+</html>

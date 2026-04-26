@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instructions Assignment — Nathan Duong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#f8f6f3; --surface:#fff; --text:#181818; --muted:#666; --accent:#1d4ed8; --border:#e4e0db; --warn:#fef3c7; --warn-border:#d97706; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    nav { position:fixed; top:0; left:0; right:0; z-index:200; background:rgba(248,246,243,0.92); backdrop-filter:blur(14px); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:0 6%; height:62px; }
+    .nav-logo { font-family:'DM Serif Display',serif; font-size:1.2rem; color:var(--text); text-decoration:none; }
+    .nav-links { display:flex; gap:1.8rem; list-style:none; }
+    .nav-links a { font-size:0.85rem; font-weight:500; color:var(--muted); text-decoration:none; transition:color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--accent); }
+    .nav-cta { background:var(--accent); color:#fff !important; padding:0.35rem 0.9rem; border-radius:6px; }
+
+    .page-wrap { max-width:860px; margin:0 auto; padding:100px 6% 80px; }
+    .page-label { font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:0.5rem; }
+    h1.page-title { font-family:'DM Serif Display',serif; font-size:clamp(2rem,4vw,3rem); letter-spacing:-0.03em; margin-bottom:0.5rem; }
+    .intro-para { font-size:0.97rem; color:var(--muted); line-height:1.8; max-width:680px; margin-bottom:2.5rem; padding-bottom:2.5rem; border-bottom:1px solid var(--border); }
+    .back-link { display:inline-flex; align-items:center; gap:0.4rem; font-size:0.85rem; font-weight:500; color:var(--muted); text-decoration:none; margin-bottom:1.5rem; transition:color 0.2s; }
+    .back-link:hover { color:var(--accent); }
+
+    .content-card { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:2.8rem 3rem; }
+
+    .doc-title { font-family:'DM Serif Display',serif; font-size:2rem; letter-spacing:-0.03em; text-align:center; margin-bottom:0.5rem; }
+    .doc-divider { border:none; border-top:2px solid var(--text); margin:1rem 0 2rem; }
+
+    .doc-section { margin-bottom:2rem; }
+    .doc-section h2 { font-size:1rem; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.8rem; }
+    .doc-section p { font-size:0.95rem; color:var(--muted); line-height:1.8; margin-bottom:0.8rem; }
+    .doc-section p:last-child { margin-bottom:0; }
+
+    .warn-box { background:var(--warn); border:1px solid var(--warn-border); border-radius:10px; padding:1.2rem 1.4rem; margin-bottom:2rem; }
+    .warn-box-title { font-weight:700; font-size:0.88rem; color:#92400e; margin-bottom:0.6rem; text-transform:uppercase; letter-spacing:0.06em; }
+    .warn-box p { font-size:0.88rem; color:#78350f; line-height:1.7; margin-bottom:0.4rem; }
+    .warn-box p:last-child { margin-bottom:0; }
+    .warn-box strong { color:#78350f; }
+
+    .equipment-list { list-style:none; display:flex; flex-direction:column; gap:0.4rem; }
+    .equipment-list li { display:flex; gap:0.5rem; font-size:0.92rem; color:var(--muted); }
+    .equipment-list li::before { content:'◦'; color:var(--accent); flex-shrink:0; }
+
+    .quickstart-box { background:var(--bg); border:1px solid var(--border); border-radius:10px; padding:1.4rem 1.6rem; margin-bottom:2rem; }
+    .quickstart-box ul { list-style:none; display:flex; flex-direction:column; gap:0.45rem; }
+    .quickstart-box li { display:flex; gap:0.5rem; font-size:0.92rem; color:var(--muted); }
+    .quickstart-box li::before { content:'→'; color:var(--accent); flex-shrink:0; }
+
+    .steps-list { display:flex; flex-direction:column; gap:1.4rem; }
+    .step { display:grid; grid-template-columns:2.5rem 1fr; gap:1rem; align-items:start; }
+    .step-num { width:2.5rem; height:2.5rem; background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.9rem; flex-shrink:0; margin-top:0.1rem; }
+    .step-content h3 { font-weight:600; font-size:0.98rem; margin-bottom:0.35rem; }
+    .step-content p { font-size:0.9rem; color:var(--muted); line-height:1.75; }
+
+    .table-wrap { overflow-x:auto; margin-top:1rem; }
+    table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+    th { background:var(--accent); color:#fff; padding:0.6rem 1rem; text-align:left; font-weight:600; }
+    td { padding:0.55rem 1rem; border-bottom:1px solid var(--border); color:var(--muted); }
+    tr:last-child td { border-bottom:none; }
+    tr:nth-child(even) td { background:#fafaf8; }
+
+    .glossary-list { display:flex; flex-direction:column; gap:0.6rem; }
+    .gloss-item { display:grid; grid-template-columns:160px 1fr; gap:1rem; font-size:0.9rem; }
+    .gloss-term { font-weight:600; color:var(--text); }
+    .gloss-def { color:var(--muted); line-height:1.65; }
+
+    footer { text-align:center; padding:2rem 5%; border-top:1px solid var(--border); font-size:0.8rem; color:var(--muted); margin-top:4rem; }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">Nathan Duong</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="resume.html">Résumé</a></li>
+    <li><a href="cover-letter.html">Cover Letter</a></li>
+    <li><a href="instructions.html" class="active">Instructions</a></li>
+    <li><a href="proposal.html">Proposal</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <a class="back-link" href="index.html">← Back to Home</a>
+  <p class="page-label">Course Assignment</p>
+  <h1 class="page-title">Instructions Assignment</h1>
+  <p class="intro-para">For this assignment, the goal was to write a clear, audience-appropriate set of instructions for a technical or procedural task. I chose to document the process of dialing in a shot of espresso — a precision-based skill that requires careful adjustment of multiple variables to achieve a balanced, repeatable result. The document demonstrates my ability to break down a complex process into logical, accessible steps with appropriate safety warnings and reference aids.</p>
+
+  <div class="content-card">
+    <div class="doc-title">How To Dial a Shot of Espresso</div>
+    <hr class="doc-divider">
+
+    <div class="doc-section">
+      <h2>Introduction</h2>
+      <p>Espresso is a concentrated form of coffee served as the foundation of countless café drinks, from lattes to cappuccinos. After reading this guide, you will understand how to properly dial in a shot of espresso with consistency. Dialing in espresso is the process of adjusting the grind size, dose, yield, and extraction time to achieve a balanced extraction.</p>
+      <p>When done correctly, this process ensures that each shot delivers the ideal combination of sweetness and acidity without tasting sour or bitter.</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="warn-box-title">⚠ Warning & Safety Notes</div>
+      <p><strong>Hot Surfaces</strong> — The group head, portafilter, steam wand, and metal components can become extremely hot during operation. Use caution and avoid touching heated parts directly.</p>
+      <p><strong>Pressurized System</strong> — The espresso machine operates under high pressure. Removing the portafilter while a shot is being extracted can cause hot water and coffee grounds to spray outward.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>Equipment & Materials</h2>
+      <ul class="equipment-list">
+        <li>Espresso machine (fully warmed and clean)</li>
+        <li>Burr grinder</li>
+        <li>Portafilter and basket (dry and clean)</li>
+        <li>Tamper (correct size for your espresso machine)</li>
+        <li>Digital scale</li>
+        <li>Timer</li>
+        <li>Fresh whole coffee beans (7–21 days after roast)</li>
+        <li>Filtered water</li>
+      </ul>
+    </div>
+
+    <div class="doc-section">
+      <h2>Quick Start</h2>
+      <div class="quickstart-box">
+        <ul>
+          <li>Start with a 1:2 brew ratio (18g of beans in : 36g espresso out)</li>
+          <li>Aim for 25–35 seconds extraction time</li>
+          <li>Adjust grind finer if the shot runs too fast; coarser if it runs too slow</li>
+          <li>Enjoy your dialed espresso shot</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="doc-section">
+      <h2>Dial-In Process</h2>
+      <div class="steps-list">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Prepare the Machine</h3>
+            <p>Turn on the machine and allow it to warm up completely — approximately 10–15 minutes before use. Lock in the portafilter and run a blank shot to stabilize the temperature.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Weigh and Grind Coffee</h3>
+            <p>Weigh and grind the dose precisely. Place the portafilter on the scale, tare the scale, and grind 18 grams of coffee beans — the standard baseline starting point.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Distribute and Tamp the Grounds</h3>
+            <p>Distribute the grounds evenly in the portafilter. Tamp firmly and level — keep your wrist straight and apply consistent downward pressure. Avoid tilting, as this causes channeling.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3>Begin Extraction</h3>
+            <p>Insert and lock the portafilter into the machine. Place your tared cup on the scale beneath the spout. Start the extraction and your timer simultaneously when you hear the pump engage.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h3>Observe and Track</h3>
+            <p>Stop the shot at 36 grams yield. Confirm total extraction time falls between 25–35 seconds. The espresso stream should resemble a syrup-like flow — avoid pale or spraying streams.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">6</div>
+          <div class="step-content">
+            <h3>Taste and Evaluate</h3>
+            <p>Stir before tasting. Identify body, acidity, and bitterness. Determine if the shot is balanced, over-extracted, or under-extracted using the reference table below.</p>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Observation</th><th>Likely Cause</th><th>Adjustment</th></tr></thead>
+                <tbody>
+                  <tr><td>&lt;25 sec, sour taste</td><td>Under-Extraction</td><td>Grind Finer</td></tr>
+                  <tr><td>&gt;35 sec, bitter taste</td><td>Over-Extraction</td><td>Grind Coarser</td></tr>
+                  <tr><td>Weak body</td><td>Low Extraction</td><td>Increase Dose Slightly</td></tr>
+                  <tr><td>Too intense</td><td>High Extraction</td><td>Increase Yield</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">7</div>
+          <div class="step-content">
+            <h3>Adjust and Repeat</h3>
+            <p>Change only one variable at a time and repeat the process. Record each attempt — noting dose, yield, time, grind size, and tasting notes — until you achieve a consistently balanced shot.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="doc-section">
+      <h2>Glossary</h2>
+      <div class="glossary-list">
+        <div class="gloss-item"><span class="gloss-term">Dose</span><span class="gloss-def">Amount of dry coffee grounds used, measured in grams.</span></div>
+        <div class="gloss-item"><span class="gloss-term">Yield</span><span class="gloss-def">Amount of liquid espresso output, measured in grams.</span></div>
+        <div class="gloss-item"><span class="gloss-term">Brew Ratio</span><span class="gloss-def">The relationship between dose and yield (e.g., 1:2 = 18g in, 36g out).</span></div>
+        <div class="gloss-item"><span class="gloss-term">Extraction Time</span><span class="gloss-def">Total time water flows through the coffee grounds.</span></div>
+        <div class="gloss-item"><span class="gloss-term">Channeling</span><span class="gloss-def">Uneven water flow through weak spots in the coffee puck, typically caused by uneven tamping.</span></div>
+        <div class="gloss-item"><span class="gloss-term">Tamp</span><span class="gloss-def">The act of compacting coffee grounds in the portafilter.</span></div>
+        <div class="gloss-item"><span class="gloss-term">Portafilter</span><span class="gloss-def">The handle-mounted basket that holds coffee grounds during extraction.</span></div>
+        <div class="gloss-item"><span class="gloss-term">Under-Extraction</span><span class="gloss-def">Sour, thin flavor caused by insufficient contact between water and grounds.</span></div>
+        <div class="gloss-item"><span class="gloss-term">Over-Extraction</span><span class="gloss-def">Bitter, dry flavor caused by excessive extraction of compounds from the grounds.</span></div>
+      </div>
+    </div>
+
+    <div class="doc-section">
+      <h2>Conclusion</h2>
+      <p>Dialing in a shot of espresso is a deliberate and repeatable process built on precision, observation, and taste. By warming the machine, weighing the dose accurately, tamping evenly, measuring yield carefully, and adjusting the grind intentionally, you create the conditions for a balanced extraction.</p>
+      <p>Each step builds on the previous, and consistency is key. Remember that espresso is dynamic — each coffee bean is different. For this reason, dialing in espresso is not a one-time task but an ongoing practice. Change only one variable at a time, measure every shot, taste honestly, and enjoy your espresso.</p>
+    </div>
+  </div>
+</div>
+
+<footer>© 2025 Nathan Duong · <a href="index.html" style="color:var(--accent);text-decoration:none;">Back to Portfolio</a></footer>
+</body>
+</html>
